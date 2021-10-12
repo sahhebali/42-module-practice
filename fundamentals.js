@@ -171,7 +171,60 @@ const game = {
 
 }
 const findDhoni = `the most valuble  indian cricet player ${game.MsDhoni.name}`
-console.log(findDhoni);
+// console.log(findDhoni);
+
+
+/*****************  ES-6 ************/
+/*--------
+ 1. template string ${}
+---------- */
+const temp = 'i am created template string';
+const tempResult = `result found (yes) ${temp}`
+// console.log(tempResult);
+
+const firstName = 'MD';
+const lastName = 'Saheb';
+function fullname(firstName, lastName) {
+    return `${firstName} ${lastName}`;
+}
+const nameresult = `hello ${fullname(firstName, lastName)}`
+// console.log(nameresult);
+
+
+/* spread (...) */
+// const numbers = [12, 32, 55, 88];
+// console.log(numbers);
+// console.log(...numbers);
+
+const numbers = [25, 89, 991, 45];
+numbers.push(1000)
+const max = Math.max(...numbers)
+const numbers2 = Math.min(...numbers, 1001)
+// console.log(numbers2);
+
+/*------
+ 2.1 copy an array then add a new element to an array 
+-------- */
+const pinCode = [742135, 742121, 741235];
+const pinCode2 = [...pinCode, 123000]
+// console.log(pinCode2);
+const product = [
+    { name: 'laptop', price: 25000, color: 'pink' },
+    { name: 'phone', price: 15000, color: 'golden' },
+    { name: 'fan', price: 1500, color: 'white' }
+]
+
+const newProduct = { name: 'macbook', price: 80000, color: 'silver' }
+const newproducts = [...product, newProduct]
+
+/*-----
+ 2.1 use filter to remove an element from an array
+ ------*/
+const remaining = product.filter(p => p.name !== 'laptop')
+console.log(remaining)
+
+
+
 
 // if (new Date().getHours() < 18) {
 //     document.getElementById("demo").innerHTML = "Good day!";
