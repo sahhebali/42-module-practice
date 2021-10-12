@@ -120,15 +120,58 @@ console.log(includdd);
 /*-----------
  1.4 for loop, while
  ------------ */
-
+/* for loop  */
 const getPen = 5;
 for (let i = 0; i <= 5; i++) {
     console.log(i);
 }
+/* while loop */
+// let a = 1;
+// while (a <= 5) {
+//     console.log(a + '', 'hello java script')
+//     a = a + 1;
+// }
 
 
+// let count = 1;
+// while (count <= 5) {
+//     console.log(count + '', 'hello java script')
+//     count = count + 1;
+// }
 
 
+/* 1.5 function return parameter */
+
+function age(robin, sochin) {
+    const result = robin + sochin;
+    return result;
+}
+
+const totalAge = age(15, 20)
+// console.log(totalAge);
+
+
+/* 1.6 Object property, including array, object */
+
+const game = {
+    cricet: 'india',
+    footbool: 'brazil',
+
+    indianCriceter: ['Ms dhoni', 'Virat Kholi', 'Rohit shorma', 'Reshav Pant', 'Sriyas Iare', 'Raindra Jadeja',
+        'Bhumra',],
+    MsDhoni: {
+        name: 'Dhoni',
+        job: 'cricet',
+        age: 40,
+        movi: {
+            moviName: 'Ms dhoni(The untold story)',
+            others: 'footbool'
+        }
+    }
+
+}
+const findDhoni = `the most valuble  indian cricet player ${game.MsDhoni.name}`
+console.log(findDhoni);
 
 // if (new Date().getHours() < 18) {
 //     document.getElementById("demo").innerHTML = "Good day!";
