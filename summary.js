@@ -18,7 +18,7 @@ ES6
 3.2 single parameter 
 3.3 multiple parameters ()
 3.4 multi line 
-4 destructuring : object destructuring array destructuring 
+4 destructuring : object destructuring ,array destructuring 
 5. object declaration shorthand
 6. function parameter default value
 7. Optional chaining (?.)

@@ -1,7 +1,7 @@
 // Task-1 Fundamentals
 
 /*1.1 tree type variablse */
-var myName = 'Md Saheb';         /* string type */
+var myNameM = 'Md Saheb';         /* string type */
 let myAge = 25;                  /* number type:  will be chang*/
 const myBirthOfYear = 1996;      /* const not will be change  */
 const sunWakeUp = ('East', true);  /* boolian type */
@@ -222,6 +222,91 @@ const newproducts = [...product, newProduct]
  ------*/
 const remaining = product.filter(p => p.name !== 'laptop')
 console.log(remaining)
+
+
+// 3. Arrow function
+// function expression(anonymus)
+const add1 = function add1(num1, num2) {
+    return num1 + num2;
+}
+const sum = add1(15, 17);
+/* arrow function */
+const add2 = (num1, num2) => num1 + num2;
+const sum2 = add2(20, 30);
+// console.log(sum, sum2)
+
+/* 3.1 no parameter () */
+const add3 = () => 'Md Saheb';
+const name = add3();
+console.log(name);
+/*--------
+3.2 single parameter (parameter jodi 1 ta hoy tobe 1st braket naw dite paro exzample: const add3 = num =>num*5)
+ --------*/
+const add4 = (num) => num * 5;
+const sum3 = add4(6);
+// console.log(sum3)
+
+// console.log(totalNewGroup)
+
+
+
+/*---------
+3.3 multiple parameters ()
+ ----------*/
+
+
+
+
+
+/* 3.4 multi line arow function:  onek line arrow function jodi likte hoy tobe tumi {} third brfaket er moddhe likba & return korba*/
+// const add5 = (x, y) => {
+//     const plus = x + y;
+//     const difrence = x - y;
+//     const multiply = plus * difrence;
+//     const output = multiply * 5;
+//     return output;
+// }
+// const total = add5(12, 5);
+// console.log(total)
+
+
+
+/* 4 destructuring : object destructuring   */
+
+const user = {
+    myName: 'Md saheb ',
+    id: 5,
+    game: { cricet: 'my favarit game ', badminton: 'i lick badminton' },
+    hoby: 'elektric parts try',
+    job: 'learn webdeveloper',
+}
+const { myName, job } = user;
+// console.log(myName, job);
+
+/* array destructuring */
+const [a, b, c] = [25, 26, 12];
+// console.log(a, b, c);
+const [name1, age1, addres1] = ['Md saheb', 25, 'bhagwangola'];
+// console.log(name1, age1, addres1);
+
+
+/*  --------5. object declaration shorthand --------*/
+
+/* ------6. function parameter default value------ */
+
+function defaultParameter(a = 2, b = 5) {
+    console.log(a + b)
+}
+
+const sum9 = defaultParameter();
+console.log(sum9)
+
+
+/* Browser API*/
+/*------1. local storage  , session stoage------*/
+
+
+
 
 
 
