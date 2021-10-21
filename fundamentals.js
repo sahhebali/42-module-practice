@@ -79,8 +79,8 @@ else {
 
 const getJob = true;
 const home = false;
-const money = 2500000;
-if (getJob && money >= 300000) {
+const money1 = 2500000;
+if (getJob && money1 >= 300000) {
     // console.log('tomar chakri & bari thakle tumi allowed  hobe')
 }
 else {
@@ -303,7 +303,172 @@ console.log(sum9)
 
 
 /* Browser API*/
-/*------1. local storage  , session stoage------*/
+/*------1. local storage  , session stoage-(sesion storage ta browser a laptop bondo ba onno kono website a gele sesion storage chole jay kintu Local storage theke jay)*/
+
+// sessionStorage.setItem('md saheb id ', 7);
+
+function AddToLocalStorage() {
+    const addInput = document.getElementById('storage-id');
+    const id = addInput.value;
+    const addValue = document.getElementById('storage-value');
+    const value = addValue.value;
+
+    if (id && value) {
+        localStorage.setItem(id, value);
+    }
+    addInput.value = '';
+    addValue.value = '';
+}
+
+
+/*  2. location API ( ব্রাউজার এ লোকেশান নামে এক্ টা  জিনিস আছে আ এ টার বিভিন্ন অংস কে আমরা আকসেস করতে পারি যেমন location.hash,href,host,ashin, ETC... ) */
+const relodLocation = () => {
+    location.reload();
+}
+
+const addhref = () => {
+    location.assign('https://web.programming-hero.com/')
+}
+
+
+/* 3. History API ( history api হছে যে আমি যে পেজ আছি সেই পেজ এ কতটা 
+    পেজ ওপেন করেছি তা history.length দিয়ে চেক করতে পারবো এবং ( < history.back, >history.forword কনো পেজ এর আগে ও পরে জেতে পারব ), and (go দিয়ে forword and backword এর দুটো কাজ ঈ করতে পারব) )*/
+
+const backword = () => {
+    history.back()
+}
+const forword = () => {
+    history.forward()
+}
+const go = () => {
+    history.go(2);
+}
+
+
+/* -------------4. fetch------------- */
+
+const loadQuoates = () => {
+    fetch('https://api.kanye.rest')
+        .then(res => res.json())
+        .then(data => displatQuoate(data));
+}
+
+const displatQuoate = quote => {
+    // console.log(quote.quote);
+    const quaoteEliment = document.getElementById('quoate');
+    quaoteEliment.innerText = quote.quote;
+
+}
+
+
+/* Others
+1. array: map, forEach, filter, find */
+/* array: map */
+
+const numbers3 = [4, 6, 8, 10];
+const result1 = numbers3.map(x => x * 2);
+// console.log(result1);
+const squares = numbers3.map(x => x * x)
+// console.log(squares);
+const product1 = [
+    { name: 'mobile', price: 15000, color: 'green' },
+    { name: 'bottol', price: 100, color: 'yeallo' },
+    { name: 'pen', price: 25, color: 'red' }
+]
+const productResult = product1.map(p => p.color);
+// console.log(productResult);
+
+/* forEach  .map kono kichu return korbe but forEach kono kichu return korbe na */
+const product2 = [
+    { name: 'ms dhoni', run: 15000, 50: '50th', 100: '26th' },
+    { name: 'sachin tendulkar', run: 17000, 50: '150th', 100: '100th' },
+]
+product2.forEach(p => console.log(p));
+// console.log(productTotal)
+
+
+/*------ filter  & find--(fillter korle array & array er moddhe thaka object ta ke dibe kin FIND korle sudu object ta ke dibe (emon kichu fillter korlam je jeta nay tokhon tomake result hisebe ekta emty[] array dibe )) */
+
+const milstone = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 50];
+const bigMilstone = milstone.filter(m => m > 10);
+const smallMilstone = milstone.filter(m => m < 10);
+// console.log(bigMilstone)
+// console.log(smallMilstone)
+
+const product3 = [
+    { name: 'webdevelopment full course', price: 5500, duration: '6months' },
+    { name: 'web disign full course ', price: 4200, duration: '6 months' },
+    { name: 'graphix disign full course', price: 4800, duration: '3months' }
+]
+
+const crascourse = product3.filter(product => product.name == 'webdevelopment full course')
+// console.log(crascourse)
+const crascourseFind = product3.find(product => product.price > 4200);
+// console.log(crascourseFind)
+
+/* ternary operator (ei ta old system but ternary oparater diey shortvurt  kore kora jay ) */
+
+const money2 = 80;
+let food;
+if (money2 > 100) {
+    food = 'biriyany';
+}
+else {
+    food = 'cha biskut'
+}
+// console.log(food)
+/* ternary operator */
+const food1 = money2 > 100 ? 'biriyany' : 'cha biskut'
+// console.log(food1)
+
+
+
+/* 3. logical &&, logical ||   */
+const myVar = 105;
+const money3 = 101;
+const drink = (myVar > 100 && money3 > 100) ? 'coke' : 'fillter water';
+// console.log(drink);
+
+const drink2 = (myVar > 200 || money3 > 100) ? 'cokacola' : 'minarel water'
+// console.log(drink2)
+const isactiv = false;
+const showuser = () => console.log('displayuser');
+const hideUser = () => console.log('hide User');
+isactiv ? showuser() : hideUser();
+
+
+/*  JOSN (stringify, parse) */
+const shop = {
+    name: 'kannika store',
+    product: ['mobiole,laptop,iphone,tab'],
+    profit: 15000,
+    woner: {
+        name: 'sravan',
+        profesion: 'actor'
+    },
+    isexpensive: false,
+
+}
+const shopstr = JSON.stringify(shop);
+const shopparse = JSON.parse(shopstr)
+console.log(shopstr)
+console.log(shop)
+console.log(shopparse);
+
+
+/* 5. +, */
+// number to string
+const numberToString = 42;
+const numberstr = numberToString + '';
+// console.log(numberstr)
+
+// striong to number 
+const stringTonumber = '102';
+const strnumber = +stringTonumber;
+console.log(strnumber)
+
+
+
 
 
 
