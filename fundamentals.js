@@ -123,7 +123,7 @@ console.log(includdd);
 /* for loop  */
 const getPen = 5;
 for (let i = 0; i <= 5; i++) {
-    console.log(i);
+    // console.log(i);
 }
 /* while loop */
 // let a = 1;
