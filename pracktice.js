@@ -111,7 +111,7 @@ function penCount(pen1, pen2) {
 }
 
 const pen = penCount(3, 6)
-console.log(pen);
+// console.log(pen);
 
 
 /* 1.6 Object property, including array, object */
@@ -139,4 +139,31 @@ const object = {
 
 const findAddres = `find the addres ${object.addres.dist}`
 const job1 = `i am a student ${object.job1}`
-console.log(job1);
+// console.log(job1);
+
+/* --------------------------------ES-6-------------------------------- */
+/* 1. template string ${} */
+const temp = `i will do template string`;
+const templateResult = `abcd ${temp}`
+// console.log(templateResult)
+
+/* spread (...)  */
+
+const number = [15, 25, 43, 26];
+// console.log(number)
+// console.log(...number)
+
+let number1 = [];
+let new1 = [...number];
+new1.push(1001)
+number1 = new1;
+console.log(...number1)
+const math = Math.max(...new1);
+const mathMin = Math.min(...new1);
+// console.log(mathMin)
+
+/* 2.1 copy an array then add a new element to an array */
+const pincode = [125462, 124596, 458978];
+const copy = [...pincode, 123];
+
+console.log(...copy);
