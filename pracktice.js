@@ -167,3 +167,95 @@ const pincode = [125462, 124596, 458978];
 const copy = [...pincode, 123];
 
 console.log(...copy);
+
+/* 2.1 use filter to remove an element from an array */
+const product = [
+    { name: 'computer', price: 45000, storage: '8 GB' },
+    { name: 'iphone', price: 61000, storage: '10 GB' },
+    { name: 'laptop', price: 39000, storage: '4 GB' },
+]
+
+const filter = product.filter(p => p.name !== 'iphone');
+const filter2 = product.filter(x => x.name !== 'laptop');
+// console.log(filter);
+// console.log(filter2);
+
+/* 3. ---Arrow function---*/
+// function expression(anonymus)
+const add = function add1(num1, num2) {
+    return num1 + num2;
+};
+const sum = add(13, 12);
+// console.log(sum);
+
+
+const add1 = (num2, num3) => num2 + num3;
+const sum2 = add1(9, 12);
+// console.log(sum2)
+
+/* 3.1 no parameter () */
+const add2 = () => 'md saheb'
+const sum3 = add2();
+// console.log(sum3)
+
+/* 3.2 single parameter */
+
+const add3 = num4 => num4 * 5;
+const sum4 = add3(6);
+// console.log(sum4)
+
+/* 3.3 multiple parameters () */
+const multiLine = (num5, num6) => {
+    const plus = num5 + num6;
+    const minus = num5 - num6;
+    const multiPly = plus + minus;
+    const output = multiPly * 5;
+    return output;
+}
+const sum5 = multiLine(9, 6);
+console.log(sum5)
+
+
+/* 4 destructuring : object destructuring ,array destructuring  */
+const person = { name: 'MD Saheb ali ', job: 'lear webdevelopment', goal: 'freelancing' }
+const { name, goal } = person;
+// console.log(name, goal);
+
+const [age1, name1] = [25, 'md saheb ali', 12, 'learn webdevelopment', 46, 'freelancing', 49];
+console.log(age1, name1)
+
+/* 5. object declaration shorthand */
+
+/* 6. function parameter default value  */
+
+function defultValue(golden = 70000, dimond = 'i dont know dimond price') {
+    const result2 = golden + 5;
+    return result2;
+
+}
+const goldenPrice = defultValue()
+console.log(goldenPrice)
+
+/* 7. Optional chaining (?.)*/
+const amazon = {
+    employer: {
+        name: 'stov',
+        job: 'frontend developer',
+
+    },
+    employer2: {
+        name: 'tom',
+        job: 'frontend developer',
+        web: {
+            tech: 'web developer',
+            first: 'graphix disigner',
+            second: 'webdesigner'
+
+        }
+    }
+}
+
+// console.log(amazon.employer2.web.tech);
+console.log(amazon.beck?.web.tech);
+
+
