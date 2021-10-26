@@ -236,7 +236,7 @@ function defultValue(golden = 70000, dimond = 'i dont know dimond price') {
 const goldenPrice = defultValue()
 console.log(goldenPrice)
 
-/* 7. Optional chaining (?.)*/
+/* 7. Optional chaining (?.)(optional chining erorr handliong এর ক্ষেত্রে যখন চেনিং করার সমায় কন কারনে ভুল হয় তবে ? চিন্ন দিলে এরর তা দিবে না কিন্তু undefind দেখাবে  )*/
 const amazon = {
     employer: {
         name: 'stov',
@@ -256,6 +256,6 @@ const amazon = {
 }
 
 // console.log(amazon.employer2.web.tech);
-console.log(amazon.beck?.web.tech);
+console.log(amazon?.beck?.web?.tech);
 
 
