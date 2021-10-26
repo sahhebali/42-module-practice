@@ -85,27 +85,25 @@ const arrayIncluded = arrayStr.includes('rubel')/* includes er khetre array er m
 // console.log(arrayStr)
 
 /* 1.4 for loop, while */
-let foor = 1;
-for (let i = 0; i <= 5; i++) {
-    // console.log(i)
-}
+// let foor = 1;
+// for (let i = 0; i <= 5; i++) {
+//     console.log(i)
+// }
 
-const whilee = 1;
-while (whilee === 1) {
-    const i = 0;
-    i + 1;
-    // console.log(i)
-}
+// const whilee = 1;
+// while (whilee === 1) {
+//     const i = 0;
+//     i + 1;
+//     console.log(i)
+// }
 
-
-/* 1.5 function return parameter */
 const available = 5;
-const coast = 3;
-function returnParmeter(total) {
-    const develop1 = available * total;
-    const develop2 = coast * total;
-    const developTotal = develop1 + develop2;
+const cost = 3;
+function returnParameter(home) {
+    const develop1 = available * home;
+    const develop2 = cost * home;
+    const developTotal = develop1 + develop2
     return developTotal;
 }
-const developResult = returnParmeter(6);
+const developResult = returnParameter(6);
 console.log(developResult);
