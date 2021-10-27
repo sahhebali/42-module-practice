@@ -107,3 +107,276 @@ function returnParameter(home) {
 }
 const developResult = returnParameter(6);
 console.log(developResult);
+
+/* 1.6 Object property, including array, object */
+
+const user = {
+    name: 'rohim', age: 26, hisPhone: 'vivo',
+    profesion: 'any work',
+    hoby: {
+        cricket: 'my feverite game',
+        football: 'my part time game',
+    },
+    job: {
+        profesion: 'learn Webdevelopment'
+    },
+    number: [25, 23, 15, 63,]
+
+}
+const user2 = `I ${user.job.profesion}`;
+// console.log(user2);
+
+
+/* ES6
+1. template string ${}
+2. spread (...) 
+2.1 copy an array then add a new element to an array 
+2.1 use filter to remove an element from an array
+3. Arrow function
+3.1 no parameter ()
+3.2 single parameter 
+3.3 multiple parameters ()
+3.4 multi line 
+4 destructuring : object destructuring ,array destructuring 
+5. object declaration shorthand
+6. function parameter default value
+7. Optional chaining (?.) */
+
+const templateStr = {
+    name: 'rohim', age: 26, hisPhone: 'vivo',
+    profesion: 'any work',
+    hoby: {
+        cricket: ' cricket my feverite game',
+        football: 'my part time game',
+    },
+    job: {
+        profesion: 'learn Webdevelopment'
+    },
+}
+
+const myName = `my name ${templateStr.name}`;
+const myHoby = `my fouvarite game ${templateStr.hoby.cricket}`
+// console.log(myHoby)
+
+/* spread (...) */
+const spredad = [54, 25, 63, 16,];
+// console.log(...spredad)
+
+/* 2.1 copy an array then add a new element to an array  */
+
+const spredad2 = [...spredad, 55];
+console.log(...spredad2);
+
+/* 2.1 use filter to remove an element from an array*/
+const fill = [
+    { name: 'bag', color: 'red', price: 309 },
+    { name: 'bottol', color: 'yellow', price: 150 },
+    { name: 'shoes', color: 'black&white', price: 510 }
+]
+// function fillter1(p) {
+//     const useFillter = fill.filter(p !== 'bag');
+//     console.log(useFillter);
+// }
+// const checkFillter = fillter1(fill);
+// console.log(checkFillter);
+
+const checkFillter = fill.filter(p => p.name != 'bag');
+// console.log(checkFillter)
+
+/* 3. Arrow function */
+/* 3.1 no parameter ()*/
+
+
+const add = () => 'Md saheb';
+const mdSaheb = add();
+// console.log(mdSaheb);
+
+/* 3.2 single parameter  */
+const add2 = p => p * 2;
+const sum = add2(3);
+// console.log(sum);
+
+/*  3.3 multiple parameters ()*/
+const add3 = (num1, num2) => num1 * num2;
+const sum2 = add3(5, 15);
+// console.log(sum2)
+
+/* 3.4 multi line  */
+
+const add4 = (num3, num4) => {
+    const plus = num3 + num4;
+    const minus = num3 - num4;
+    const multiplay = plus * minus;
+    return multiplay
+}
+
+const multiplearrow = add4(18, 12);
+// console.log(multiplearrow)
+
+/* 4 destructuring : object destructuring ,array destructuring */
+
+const objUser = {
+    name: 'allexa', price: 3200, color: 'red',
+
+}
+const { name } = objUser;
+// console.log(name);
+
+/* array destructruing */
+const [a, b, c, d] = [25, 36, 45, 96,];
+// console.log(a, b, c);
+
+/* 5. object declaration shorthand */
+
+const name2 = 'sirajdullha '
+const area = 'murshidabad'
+
+/* reguler */
+// const nobab = {
+//     name2: name2,
+//     area: area
+// }
+
+/* short hand/ shortcut */
+const nobab2 = { name2, area }
+// console.log(nobab2)
+
+/* 6. function parameter default value */
+function defaultParameter(x = 255, y = 55) {
+    return x + y;
+}
+const defaultParameterTotal = defaultParameter()
+// console.log(defaultParameterTotal)
+
+/* 7. Optional chaining (?.) */
+
+const flipcurt = {
+    product: 'hareshampoo', price: 356, description: {
+        mfgyear: 2021,
+        expryyear: 2023,
+        note: 'pleas use a rulse mandatory'
+    }
+}
+
+// console.log(flipcurt?.beck?.note)
+/* ---------------------------------------------------- */
+
+/* Browser API*/
+/* 1. local storage session stoage */
+function addinput() {
+    const addInput = document.getElementById('addInput');
+    const id = addInput.value;
+    const addValue = document.getElementById('addValue');
+    const input = addValue.value;
+    if (id && input) {
+        localStorage.setItem(id, input);
+    }
+
+    addInput.value = '';
+    addValue.value = '';
+}
+
+
+// 2. location API
+const reloadLocation = () => {
+    location.reload()
+}
+
+const goToNextSite = () => {
+    location.assign('https://www.youtube.com/watch?v=uB6vNq_0ajo&list=RDMMuB6vNq_0ajo&start_radio=1')
+}
+
+// 3. History API
+const backword1 = () => {
+    history.back();
+}
+
+const forword = () => {
+    history.forward();
+}
+
+const go = () => {
+    history.go(3)
+}
+
+// 4. fetch 
+const loadQuoates = () => {
+    fetch('https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=Arsenal')
+        .then(res => res.json())
+        .then(data => dispalyQuoates(data))
+}
+const dispalyQuoates = (quoat) => {
+    // console.log(quoat.teams)
+    const quoatEliment = document.getElementById('quoate');
+    // quoatEliment.innerText = quoat.teams[1]
+}
+
+
+/* Others
+1. array: map, forEach, filter, find */
+const arrayMap = [5, 6, 9, 8];
+const arrayMap2 = arrayMap.map(x => x * 2);
+const squares = arrayMap.map(x => x * 4);
+// console.log(squares)
+const product1 = [
+    { name: 'power Bank', price: 1110, color: 'skyBlue' },
+    { name: 'keyBord', price: 1700, color: 'black' },
+]
+// product1.forEach(p => console.log(p));
+
+const product2 = [0, 1, 2, 3, 4, 5, 6, 7, 8, , 9, 10, 11, 12, 13, 14, 15, , 16, 17];
+const arrayFillter = product2.filter(p => p > 10);
+const arrayFillter2 = product2.filter(p => p < 10);
+// console.log(arrayFillter)
+
+const product3 = [
+    { name: 'webdevelopment full course', price: 5500, duration: '6months' },
+    { name: 'web disign full course ', price: 4200, duration: '6 months' },
+    { name: 'graphix disign full course', price: 4800, duration: '3months' }
+]
+const objFind = product3.find(product => product.price < 4800);
+// console.log(objFind)
+
+
+/* 2. ternary operator  */
+const money2 = 110;
+let food;
+const ternary = money2 > 200 ? 'biriyany' : 'chabiskut';
+// console.log(ternary)
+
+/* 3. logical and logical or && || */
+const myVar = 90;
+const myMoney = 80;
+const drink = (myVar && myMoney) ? 'cook' : 'fillter water';
+// console.log(drink)
+const drink2 = (myVar > 200 || myMoney > 70) ? 'cokacola' : 'minarel water';
+// console.log(drink2)
+
+const isactive = false;
+const showuser = () => console.log('showUser');
+const hideuser = () => console.log('hideUser');
+isactive ? showuser() : hideuser()
+
+
+// 4. JOSN (stringify, parse)
+const shop = {
+    name: 'kannika store',
+    product: 'mobile,laptop,iphon',
+    woner: {
+        name: 'kannika',
+        profesion: 'actor'
+    },
+    profit: 800,
+    isexpensive: true
+}
+const shopjson = JSON.stringify(shop);
+const shopjsonParse = JSON.parse(shopjson)
+// console.log(shopjsonParse)
+
+// 5. +,
+const numToString = 102;
+const convertStr = numToString + '';
+// console.log(convertStr)
+const strToNumber = '45';
+const convertnum = +strToNumber;
+console.log(convertnum)

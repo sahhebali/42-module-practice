@@ -292,6 +292,34 @@ const [name1, age1, addres1] = ['Md saheb', 25, 'bhagwangola'];
 
 /*  --------5. object declaration shorthand --------*/
 
+const x = 50;
+const y = 100;
+const obj = {
+    x: x,
+    y: y
+}
+// shortcurt
+const obj1 = { x, y }/* ei shortcut khetre x er property hobe x, & value hobe x a ta javascript dhore nite pare */
+
+const name = 'solimullha';
+const aria = 'kolkata';
+
+const obj2 = {
+    name: name,
+    aria: aria
+}
+const obj3 = { name, aria }/* orthat namta propery hisebew kaj korbe & value hisebew kaj korbe  */
+
+
+
+
+
+
+
+
+
+
+
 /* ------6. function parameter default value------ */
 
 function defaultParameter(a = 2, b = 5) {
@@ -369,7 +397,7 @@ const numbers3 = [4, 6, 8, 10];
 const result1 = numbers3.map(x => x * 2);
 // console.log(result1);
 const squares = numbers3.map(x => x * x)
-// console.log(squares);
+console.log(squares);
 const product1 = [
     { name: 'mobile', price: 15000, color: 'green' },
     { name: 'bottol', price: 100, color: 'yeallo' },
@@ -406,7 +434,7 @@ const crascourse = product3.filter(product => product.name == 'webdevelopment fu
 const crascourseFind = product3.find(product => product.price > 4200);
 // console.log(crascourseFind)
 
-/* ternary operator (ei ta old system but ternary oparater diey shortvurt  kore kora jay ) */
+/* ternary operator (ei ta old system but ternary oparater diey shortcurt  kore kora jay ) */
 
 const money2 = 80;
 let food;
@@ -462,7 +490,7 @@ const numberToString = 42;
 const numberstr = numberToString + '';
 // console.log(numberstr)
 
-// striong to number 
+// string to number 
 const stringTonumber = '102';
 const strnumber = +stringTonumber;
 console.log(strnumber)
